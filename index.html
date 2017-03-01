@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		.lightOn{display:none;}
+		.typing{display:none;}
+		.box{background:red; width: 120px; height: 100px; text-align:center; padding: 10px;}
+	</style>
+	<title>Index</title>
+	<script type="text/javascript" src="jquery-3.1.1.min.js">	
+<!-- src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"> -->		
+	</script>
+	<script>
+	$(document).ready(function() {
+		$('select').change(function() {
+			$('body').css('background-color', this.value);
+		});
+		$('input').focus(function() {
+			$('span').removeClass('typing');
+		});
+		$('input').blur(function() {
+			$('span').addClass('typing');
+		});
+		
+		$('.box').mouseover(function() {
+				$('h2').css('background-color', 'blue');
+		});
+		$('.box').mouseout(function() {
+				$('h2').css('background-color', 'red');
+		});
+		
+		
+// 	$('body').css('background-color', 'yellow');
+// 		$('.lightOff').click(function() {
+// 			$('.lightOff').hide();
+// 			$('.lightOn').show();
+// 			$('body').css('background-color', 'black');
+// 		});
+// 		$('.lightOn').on('click',function() {
+// 			$('.lightOn').hide();
+// 			$('.lightOff').show();
+// 			$('body').css('background-color', 'yellow');
+// 		});
+// 	});
+});
+	</script>
+</head>
+<body>
+	<div class="box">
+		<h2>Hover to change</h2>
+	</div>
+<form>
+	<select>
+		<option value="white">White</option>
+		<option value="red">Red</option>
+		<option value="blue">Blue</option>
+	</select>
+	<button>Clear</button>
+	<br>
+	<input type="text" placeholder="Click to focus"/><span class="typing">Start typing ...</span>
+</form>
+	<!-- 
+<button class="lightOn">Turn light on</button>
+	<button class="lightOff">Turn light off</button>
+	<h1>Index</h1>
+	<p>This is a simple html document with some basic javascript</p>
+ -->
+</body>
+</html>
